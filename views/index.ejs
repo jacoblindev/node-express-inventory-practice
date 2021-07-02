@@ -6,7 +6,26 @@
         <%- include('partials/header') %>
 
         <main class="container">
-            
+            <div class="row my-5 g-3">
+                <% channel_list.forEach( channel => { %>
+                    <div class="col-4">
+                        <div class="card text-center shadow-sm">
+                            <h5 class="card-header"><%= channel.title %></h5>
+                            <div class="card-body">
+                                <h3 class="card-title"><%= channel.status %></h3>
+                                <p class="card-text text-muted">Price multiply: <span class="ms-2 rounded-pill badge bg-secondary"><%= channel.percentage %> %</span></p>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="btn btn-primary px-3">Available Items</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-sm btn-warning">Update</a>
+                                <a href="#" class="btn btn-sm btn-danger ms-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
         </main>
 
         <%- include('partials/footer') %>

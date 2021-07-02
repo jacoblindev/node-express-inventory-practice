@@ -1,12 +1,38 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // TODO:Require controller modules
 
 
 // CHANNELS ROUTES
 router.get('/all', (req, res, next) => {
-    res.render('index', { title: 'Channels'});
+    var channel_list = [
+        {
+            title: 'Uber Eats',
+            status: 'Open',
+            percentage: 16,
+            url: '/channel/001'
+        },
+        {
+            title: 'Food Panda',
+            status: 'Open',
+            percentage: 15,
+            url: '/channel/002'
+        },
+        {
+            title: 'Express',
+            status: 'Maintenance',
+            percentage: 10,
+            url: '/channel/003'
+        },
+        {
+            title: 'Shopee',
+            status: 'Closed',
+            percentage: 12,
+            url: '/channel/004'
+        }
+    ];
+    res.render('index', { title: 'Channels', channel_list: channel_list});
 });
 
 router.get('/create', (req, res, next) => {
