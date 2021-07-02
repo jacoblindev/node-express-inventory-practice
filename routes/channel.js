@@ -16,7 +16,7 @@ router.get('/all', (req, res, next) => {
         {
             title: 'Food Panda',
             status: 'Open',
-            percentage: 15,
+            percentage: 16,
             url: '/channel/002'
         },
         {
@@ -30,6 +30,12 @@ router.get('/all', (req, res, next) => {
             status: 'Closed',
             percentage: 12,
             url: '/channel/004'
+        },
+        {
+            title: 'CSV',
+            status: 'Open',
+            percentage: 5,
+            url:'/channel/005'
         }
     ];
     res.render('index', { title: 'Channels', channel_list: channel_list});
